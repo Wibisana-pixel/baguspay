@@ -1,13 +1,13 @@
 #!/bin/bash
-echo "Memperbaiki lokasi folder untuk Railway..."
-sed -i 's|"baseUrl": "./"|"baseUrl": "/app/apps/web-admin"|g' apps/web-admin/tsconfig.json
+set -e 
 
-echo "Merakit jantung aplikasi..."
+echo "1. Merakit jantung utama..."
 pnpm --filter "@repo/*" build
 
-echo "Masuk ke kamar dan merakit AdonisJS..."
+echo "2. Masuk ke kamar admin..."
 cd apps/web-admin
+
+echo "3. Merakit AdonisJS..."
 node ace build
 
-echo "Selesai bossku!"
-
+echo "4. Berhasil merakit! File siap dijalankan."
