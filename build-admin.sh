@@ -1,13 +1,16 @@
 #!/bin/bash
 set -e 
 
-echo "1. Merakit jantung utama..."
+echo "1. Mengobati mesin SWC AdonisJS..."
+sed -i 's|"baseUrl": "./"|"baseUrl": "/app/apps/web-admin"|g' apps/web-admin/tsconfig.json
+
+echo "2. Merakit jantung utama..."
 pnpm --filter "@repo/*" build
 
-echo "2. Masuk ke kamar admin..."
+echo "3. Masuk ke kamar admin..."
 cd apps/web-admin
 
-echo "3. Merakit AdonisJS..."
+echo "4. Merakit AdonisJS..."
 node ace build
 
-echo "4. Berhasil merakit! File siap dijalankan."
+echo "5. Berhasil merakit! Mesin siap dinyalakan."
