@@ -1,12 +1,13 @@
 {
-  "extends": "@adonisjs/tsconfig/tsconfig.client.json",
   "compilerOptions": {
-    "baseUrl": "/app/apps/web-admin",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
     "module": "ESNext",
-    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "baseUrl": "/app/apps/web-admin", 
+    "moduleResolution": "Node",
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["../inertia/*"]
     }
-  },
-  "include": ["./**/*.ts", "./**/*.tsx"]
+  }
 }
