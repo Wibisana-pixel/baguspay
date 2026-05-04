@@ -14,3 +14,4 @@ echo "4. Merakit AdonisJS..."
 node ace build
 
 echo "5. Berhasil merakit! Mesin siap dinyalakan."
+
